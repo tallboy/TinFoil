@@ -1,4 +1,4 @@
-exports.Generator = (() => {
+exports.TinFoil = (() => {
   // Private
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const alphabetCaps = alphabet.toUpperCase();

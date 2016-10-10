@@ -1,6 +1,6 @@
 {
-  "extends": ["airbnb", "plugin:jasmine/recommended"],
-  "plugins": ["jasmine"],
+  "extends": ["airbnb", "plugin:jasmine/recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "plugins": ["jasmine", "json"],
   "env": {
     "jasmine": true
   },

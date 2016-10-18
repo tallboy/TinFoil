@@ -5,15 +5,20 @@ exports.TinFoil = (() => {
   const numbers = '0123456789';
   const symbols = '!@#$%^&*(){}?[]<>,.';
 
-  function buildSelectionArray(withSpecial) {
+  function buildSelectionArray(alpha, caps, nums, syms) {
     let selectionArray = [];
-    const alphabetArray = alphabet.split('');
-    const capsArray = alphabetCaps.split('');
-    const numArray = numbers.split('');
+
+    // Split our strings into single character arrays
+    const alphabetArray = alpha.split('');
+    const capsArray = caps.split('');
+    const numArray = nums.split('');
+
+    // Concat chains all the arrays together
     selectionArray = selectionArray.concat(alphabetArray, capsArray, numArray);
 
-    if (withSpecial) {
-      const symbolArray = symbols.split('');
+    // If we have symbols passed in go ahead and split and add to the selectionArray
+    if (syms) {
+      const symbolArray = syms.split('');
       selectionArray = selectionArray.concat(symbolArray);
     }
 
@@ -24,17 +29,30 @@ exports.TinFoil = (() => {
     return Math.floor(Math.random() * ((max - (min + 1)) + min));
   }
 
-  function generateRandomPassword(length = 8, requireSpecial = true) {
+  function generateRandomPassword(length = 8, requireSpecial = 'true') {
     // Build selection array
-    const selectionArray = buildSelectionArray(requireSpecial);
+    let selectionArray = [];
+    if (requireSpecial === 'true') {
+      selectionArray =
+        buildSelectionArray(alphabet, alphabetCaps, numbers, symbols);
+    } else {
+      selectionArray =
+        buildSelectionArray(alphabet, alphabetCaps, numbers);
+    }
+
+    // Since arrays start at the 0th item remove one from the total length
+    // so we don't encounter array out of bounds errors
     const maxIndex = selectionArray.length - 1;
     const passwordArray = [];
 
+    // Select an item from our selection array at a random index and push it
+    // into our passwordArray
     for (let i = 0; i < length; i += 1) {
       const selectionIndex = getRandomArrayIndex(0, maxIndex);
       passwordArray.push(selectionArray[selectionIndex]);
     }
 
+    // Convert our array into a string
     return passwordArray.join('');
   }
 

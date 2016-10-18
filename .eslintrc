@@ -2,9 +2,11 @@
   "extends": ["airbnb", "plugin:jasmine/recommended", "plugin:import/errors", "plugin:import/warnings"],
   "plugins": ["jasmine", "json"],
   "env": {
-    "jasmine": true
+    "jasmine": true,
+    "node": true
   },
   "rules": {
-        "no-console":0
+    "no-console":0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 }

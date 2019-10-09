@@ -8,19 +8,18 @@
   },
   "main": "src/index.js",
   "dependencies": {
-    "chalk": "^1.1.3"
+    "chalk": "2.4.2"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "3.7.1",
-    "eslint-config-airbnb": "12.0.0",
-    "eslint-plugin-import": "1.16.0",
-    "eslint-plugin-jasmine": "1.8.1",
-    "eslint-plugin-json": "1.2.0",
-    "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-react": "6.4.0",
-    "nsp": "^2.6.2",
-    "mocha": "^3.1.0"
+    "chai": "4.2.0",
+    "eslint": "6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jasmine": "2.10.1",
+    "eslint-plugin-json": "1.4.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.16.0",
+    "mocha": "^6.2.1"
   },
   "scripts": {
     "password": "node index.js",

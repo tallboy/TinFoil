@@ -19,7 +19,7 @@
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.16.0",
-    "mocha": "^6.2.1"
+    "mocha": "^10.2.0"
   },
   "scripts": {
     "password": "node index.js",
